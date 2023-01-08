@@ -1,16 +1,15 @@
-import { ReactNode } from 'react'
 import Icon from '@/components/utilities/Icon'
-import Button from './utilities/Button'
+import Button from '@/components/utilities/Button'
 
 interface IProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 function Layout(props: IProps) {
   const { children } = props
 
   return (
-    <div className='min-h-screen flex flex-col'>
+    <div className='max-w-[1400px] min-h-screen mx-auto flex flex-col'>
       <header className='py-[18px] px-5 border-b border-[#E0E0E0] flex gap-[10px] items-center'>
         <h1 className='font-bold text-lg text-[#1E1F21]'>Product Roadmap</h1>
         <Button>
