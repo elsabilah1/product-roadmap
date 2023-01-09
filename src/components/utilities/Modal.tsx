@@ -42,7 +42,7 @@ function Modal(props: IProps) {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-[10px] bg-white shadow transition-all'>
+              <Dialog.Panel className='max-w-md transform overflow-hidden rounded-[10px] bg-white shadow transition-all'>
                 <Dialog.Title
                   as='div'
                   className='flex justify-between items-center p-6'

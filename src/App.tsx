@@ -1,29 +1,14 @@
 import Layout from '@/components/Layout'
-import TextField from '@/components/utilities/TextField'
-import TextArea from '@/components/utilities/TextArea'
-import { useEffect, useState } from 'react'
+import GroupTaskCard from './components/GroupTaskCard'
 
 function App() {
-  const [task, setTask] = useState('')
-  const [description, setDescription] = useState('')
-
-  useEffect(() => {
-    console.log({ task, description })
-  }, [task, description])
-
   return (
     <Layout>
-      <div className='space-y-3'>
-        <TextField
-          label='Task Name'
-          placeholder='Type your Task'
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <TextArea
-          label='Description'
-          placeholder='Description'
-          onChange={(e) => setDescription(e.target.value)}
-        />
+      <div className='grid grid-cols-4 gap-4'>
+        <GroupTaskCard title='Group Task 1' description='Jan - Feb' />
+        <GroupTaskCard title='Group Task 2' description='Jan - Feb' />
+        <GroupTaskCard title='Group Task 3' description='Jan - Feb' />
+        <GroupTaskCard title='Group Task 4' description='Jan - Feb' />
       </div>
     </Layout>
   )

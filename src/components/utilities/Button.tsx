@@ -11,7 +11,6 @@ const buttonClasses = cva(
           'bg-[#E11428] text-white border border-[#E11428] hover:bg-[#E11428]/70 hover:border-transparent',
         ],
         outline: 'text-black border border-[#E0E0E0] hover:bg-[#E0E0E0]',
-        text: 'text-black',
       },
     },
     defaultVariants: {
