@@ -6,4 +6,21 @@
   html {
     font-family: 'Nunito Sans', sans-serif;
   }
+
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .progress::-webkit-slider-thumb {
+      width: 16px;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 16px;
+      cursor: ew-resize;
+      background: #01959f;
+      box-shadow: -405px 0 0 400px #01959f;
+    }
+
+    .completedProgress::-webkit-slider-thumb {
+      background: #43936c;
+      box-shadow: -405px 0 0 400px #43936c;
+    }
+  }
 }

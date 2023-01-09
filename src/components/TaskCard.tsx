@@ -1,4 +1,5 @@
 import Icon from './utilities/Icon'
+import ProgressBar from './utilities/ProgressBar'
 
 interface IProps {
   title: string
@@ -6,6 +7,7 @@ interface IProps {
 
 function TaskCard(props: IProps) {
   const { title } = props
+  const progress = 100
 
   return (
     <div className='border border-[#E0E0E0] rounded-[4px] p-4 bg-[#FAFAFA]'>
@@ -13,7 +15,12 @@ function TaskCard(props: IProps) {
         {title}
       </h3>
       <div className='flex justify-between items-center gap-7'>
-        <div className='bg-green-500/50 w-full'>progress bar</div>
+        <div className='w-full flex gap-3'>
+          <ProgressBar progress={progress} />
+          <span className='text-xs text-[#757575]'>
+            {progress === 100 ? <Icon iconName='checklist' /> : progress + '%'}
+          </span>
+        </div>
         <button>
           <Icon iconName='setting' />
         </button>
