@@ -6,11 +6,12 @@ interface IProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
   title: string
+  icon?: string
   children: ReactNode
 }
 
 function Modal(props: IProps) {
-  const { isOpen, setIsOpen, title, children } = props
+  const { isOpen, setIsOpen, title, icon, children } = props
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -47,7 +48,12 @@ function Modal(props: IProps) {
                   as='div'
                   className='flex justify-between items-center p-6'
                 >
-                  <h3 className='text-lg font-bold text-[##1D1F20]'>{title}</h3>
+                  <div className='flex gap-2 items-center'>
+                    {icon && <Icon iconName={icon} />}
+                    <h3 className='text-lg font-bold text-[##1D1F20]'>
+                      {title}
+                    </h3>
+                  </div>
                   <button onClick={() => setIsOpen(false)}>
                     <Icon iconName='close' />
                   </button>

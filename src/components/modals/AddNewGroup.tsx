@@ -29,7 +29,9 @@ function AddNewGroup(props: IProps) {
         />
       </div>
       <div className='flex justify-end gap-3'>
-        <Button intent='outline'>Cancel</Button>
+        <Button intent='outline' onClick={() => setIsOpen(false)}>
+          Cancel
+        </Button>
         <Button>Submit</Button>
       </div>
     </Modal>
