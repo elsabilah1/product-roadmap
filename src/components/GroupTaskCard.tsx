@@ -1,3 +1,4 @@
+import TaskCard from './TaskCard'
 import Icon from './utilities/Icon'
 
 interface IProps {
@@ -15,8 +16,8 @@ function GroupTaskCard(props: IProps) {
       </h2>
       <p className='text-xs font-bold leading-5'>{description}</p>
       <div className='grid gap-2'>
-        <div className='border'>Task</div>
-        <div className='border'>Task</div>
+        <TaskCard title='Re-designed the zero-g doggie bags. No more spills!' />
+        <TaskCard title='Re-designed the zero-g doggie bags. No more spills!' />
       </div>
       <div>
         <button className='flex gap-[5px] items-center text-xs leading-5'>
