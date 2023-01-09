@@ -1,7 +1,7 @@
 import Icon from '@/components/utilities/Icon'
 import Button from '@/components/utilities/Button'
 import { useState } from 'react'
-import DeleteTask from './modals/DeleteTask'
+import EditTask from './modals/EditTask'
 interface IProps {
   children: React.ReactNode
 }
@@ -12,7 +12,7 @@ function Layout(props: IProps) {
 
   return (
     <>
-      <DeleteTask isOpen={isOpen} setIsOpen={setIsOpen} />
+      <EditTask isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className='max-w-[1400px] min-h-screen mx-auto flex flex-col'>
         <header className='py-[18px] px-5 border-b border-[#E0E0E0] flex gap-[10px] items-center'>
           <h1 className='font-bold text-lg text-[#1E1F21]'>Product Roadmap</h1>
