@@ -1,12 +1,13 @@
 interface IProps {
   label: string
   placeholder: string
+  secure?: boolean
   onChange: (e: any) => void
   defaultValue?: string
 }
 
 function TextField(props: IProps) {
-  const { label, placeholder, onChange, defaultValue } = props
+  const { label, placeholder, onChange, defaultValue, secure } = props
 
   return (
     <div className='grid w-80 text-[#404040]'>
@@ -15,7 +16,7 @@ function TextField(props: IProps) {
       </label>
       <input
         id={label}
-        type='text'
+        type={secure ? 'password' : 'text'}
         placeholder={placeholder}
         onChange={onChange}
         defaultValue={defaultValue}
