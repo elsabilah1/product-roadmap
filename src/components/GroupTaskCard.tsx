@@ -50,7 +50,9 @@ function GroupTaskCard(props: IProps) {
           {data.length > 0 ? (
             data.map((item: IData) => (
               <TaskCard
-                title={item.name}
+                groupTaskId={id}
+                taskId={item.id}
+                name={item.name}
                 progress={item.progress_percentage}
                 key={item.id}
               />

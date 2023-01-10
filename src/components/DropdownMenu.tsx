@@ -5,14 +5,34 @@ import EditTask from './modals/EditTask'
 import Icon from './utilities/Icon'
 import MenuItem from './MenuItem'
 
-function DropdownMenu() {
+interface IProps {
+  id: string
+  taskId: string
+  name: string
+  progress: number
+}
+
+function DropdownMenu(props: IProps) {
+  const { id, taskId, name, progress } = props
   const [editModal, setEditModal] = useState(false)
   const [deleteModal, setDeleteModal] = useState(false)
 
   return (
     <>
-      <EditTask isOpen={editModal} setIsOpen={setEditModal} />
-      <DeleteTask isOpen={deleteModal} setIsOpen={setDeleteModal} />
+      <EditTask
+        id={id}
+        taskId={taskId}
+        nameValue={name}
+        progressValue={progress}
+        isOpen={editModal}
+        setIsOpen={setEditModal}
+      />
+      <DeleteTask
+        id={id}
+        taskId={taskId}
+        isOpen={deleteModal}
+        setIsOpen={setDeleteModal}
+      />
       <Menu as='div' className='relative flex'>
         <Menu.Button>
           <Icon iconName='setting' />

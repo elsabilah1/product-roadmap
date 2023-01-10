@@ -1,13 +1,35 @@
+import axios from 'axios'
+import { useCookies } from 'react-cookie'
 import Button from '../utilities/Button'
 import Modal from '../utilities/Modal'
 
 interface IProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
+  id: string
+  taskId: string
 }
 
 function DeleteTask(props: IProps) {
-  const { isOpen, setIsOpen } = props
+  const { isOpen, setIsOpen, id, taskId } = props
+  const [cookies] = useCookies(['token'])
+
+  const submitHandler = async () => {
+    try {
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/todos/${id}/items/${taskId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cookies.token}`,
+          },
+        }
+      )
+
+      setIsOpen(false)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Modal
@@ -25,7 +47,9 @@ function DeleteTask(props: IProps) {
         <Button intent='outline' onClick={() => setIsOpen(false)}>
           Cancel
         </Button>
-        <Button intent='secondary'>Delete</Button>
+        <Button intent='secondary' onClick={submitHandler}>
+          Delete
+        </Button>
       </div>
     </Modal>
   )

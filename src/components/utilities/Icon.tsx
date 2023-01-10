@@ -15,7 +15,7 @@ function Icon(props: IProps) {
   return (
     <>
       {loading && (
-        <div className='rounded-full bg-slate-400 animate-pulse h-8 w-8'></div>
+        <div className='rounded-full bg-slate-400 animate-pulse h-4 w-4'></div>
       )}
       {SvgIcon && (
         <div className={wrapperStyle}>
