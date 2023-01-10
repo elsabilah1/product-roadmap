@@ -8,7 +8,6 @@ function ProgressBar({ progress }: IProps) {
       type='range'
       min={0}
       max={100}
-      step={10}
       value={progress}
       className={`${
         progress === 100 && 'completedProgress'

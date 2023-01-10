@@ -24,13 +24,14 @@ function Dashboard() {
       setData(res.data)
     }
     getData()
-  }, [])
+  }, [data])
 
   return (
     <Layout>
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+      <div className='flex gap-4 overflow-x-auto'>
         {data.map((item: IData) => (
           <GroupTaskCard
+            id={item.id}
             title={item.title}
             description={item.description}
             key={item.id}

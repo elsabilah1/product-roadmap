@@ -4,11 +4,11 @@ import ProgressBar from './utilities/ProgressBar'
 
 interface IProps {
   title: string
+  progress: number
 }
 
 function TaskCard(props: IProps) {
-  const { title } = props
-  const progress = 100
+  const { title, progress } = props
 
   return (
     <div className='border border-[#E0E0E0] rounded-[4px] p-4 bg-[#FAFAFA]'>
