@@ -23,9 +23,6 @@ function TaskCard(props: IProps) {
           </span>
         </div>
         <DropdownMenu />
-        {/* <button>
-          <Icon iconName='setting' />
-        </button> */}
       </div>
     </div>
   )
