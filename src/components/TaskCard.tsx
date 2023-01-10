@@ -1,3 +1,4 @@
+import DropdownMenu from './DropdownMenu'
 import Icon from './utilities/Icon'
 import ProgressBar from './utilities/ProgressBar'
 
@@ -21,9 +22,10 @@ function TaskCard(props: IProps) {
             {progress === 100 ? <Icon iconName='checklist' /> : progress + '%'}
           </span>
         </div>
-        <button>
+        <DropdownMenu />
+        {/* <button>
           <Icon iconName='setting' />
-        </button>
+        </button> */}
       </div>
     </div>
   )
